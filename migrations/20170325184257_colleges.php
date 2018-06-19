@@ -20,7 +20,11 @@ class Colleges extends AbstractMigration
             ->addColumn('name', 'string')
 
             // Optional fields
-            ->addColumn('address', 'jsonb', ['null' => true, 'default' => null]) // Complete address as location object
+            ->addColumn('streetAddress', 'string', ['null' => true, 'default' => null])
+            ->addColumn('addressLocality', 'string', ['null' => true, 'default' => null])
+            ->addColumn('addressRegion', 'string', ['null' => true, 'default' => null])
+            ->addColumn('postalCode', 'string', ['null' => true, 'default' => null])
+            ->addColumn('addressCountry', 'string', ['null' => true, 'default' => null])
             ->addColumn('alternateName', 'string', ['null' => true, 'default' => null])
             ->addColumn('brand', 'string', ['null' => true, 'default' => null])
             ->addColumn('description', 'text', ['null' => true, 'default' => null])

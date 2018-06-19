@@ -31,20 +31,18 @@ class Colleges extends AbstractSeed
             } else {
                 // Then add each value to row of data
                 $data = [];
-                $address = [];
                 foreach ($row as $key => $value) {
 
                     // If the header has a '.', we assume its the address field
                     if (strpos($headers[$key], '.')) {
                         $columnNameArray = explode('.', $headers[$key]);
-                        $address[$columnNameArray[1]] = $value;
+                        $data[$columnNameArray[1]] = $value;
                     } else {
                         if ($value) {
                             $data[$headers[$key]] = $value;
                         }
                     }
                 }
-                $data['address'] = json_encode($address);
                 $colleges[] = $data;
             }
 
